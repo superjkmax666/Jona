@@ -1,0 +1,3 @@
+[submodule "Jona/vendor/spdlog"]
+	path = Jona/vendor/spdlog
+	url = https://github.com/gabime/spdlog
