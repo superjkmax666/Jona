@@ -1,9 +1,7 @@
 #pragma once
 
+#include "jnpch.h"
 #include "Jona/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Jona {
 

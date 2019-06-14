@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Jona {
 
 	class JONA_API WindowResizeEvent : public Event

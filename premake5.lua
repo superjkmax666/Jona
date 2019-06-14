@@ -18,6 +18,9 @@ project "Jona"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "jnpch.h"
+	pchsource "Jona/src/jnpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
