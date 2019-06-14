@@ -4,6 +4,9 @@
     <Filter Include="Jona">
       <UniqueIdentifier>{4D8A877C-39C1-880D-E2AD-6E10CEC3040F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Jona\Events">
+      <UniqueIdentifier>{91FDAA96-FDB2-238C-86A7-1D63F25B1A90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Jona.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Jona\EntryPoint.h">
       <Filter>Jona</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jona\Events\ApplicationEvent.h">
+      <Filter>Jona\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jona\Events\Event.h">
+      <Filter>Jona\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jona\Events\KeyEvent.h">
+      <Filter>Jona\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jona\Events\MouseEvent.h">
+      <Filter>Jona\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Jona\Log.h">
       <Filter>Jona</Filter>
