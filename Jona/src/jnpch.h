@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Jona/Log.h"
+
 #ifdef JN_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
