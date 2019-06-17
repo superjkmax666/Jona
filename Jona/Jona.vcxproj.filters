@@ -37,6 +37,12 @@
     <ClInclude Include="src\Jona\Events\MouseEvent.h">
       <Filter>Jona\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Jona\Layer.h">
+      <Filter>Jona</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Jona\LayerStack.h">
+      <Filter>Jona</Filter>
+    </ClInclude>
     <ClInclude Include="src\Jona\Log.h">
       <Filter>Jona</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jona\Application.cpp">
+      <Filter>Jona</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jona\Layer.cpp">
+      <Filter>Jona</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Jona\LayerStack.cpp">
       <Filter>Jona</Filter>
     </ClCompile>
     <ClCompile Include="src\Jona\Log.cpp">
