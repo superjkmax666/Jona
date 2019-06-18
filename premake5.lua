@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Jona/vendor/GLFW/include"
+IncludeDir["Glad"] = "Jona/vendor/Glad/include"
 
 include "Jona/vendor/GLFW"
+include "Jona/vendor/Glad"
 
 project "Jona"
 	location "Jona"
@@ -36,12 +38,14 @@ project "Jona"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "Jona"
 		defines
 		{
 			"JN_PLATFORM_WINDOWS",
-			"JN_BUILD_DLL"
+			"JN_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

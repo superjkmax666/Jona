@@ -4,7 +4,7 @@
 #include "Jona/Events/ApplicationEvent.h"
 #include "Jona/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 namespace Jona {
 
