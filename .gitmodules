@@ -4,3 +4,6 @@
 [submodule "Jona/vendor/GLFW"]
 	path = Jona/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Jona/vendor/imgui"]
+	path = Jona/vendor/imgui
+	url = https://github.com/TheCherno/imgui

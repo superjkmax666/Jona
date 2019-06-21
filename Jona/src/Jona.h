@@ -6,6 +6,8 @@
 #include "Jona/Layer.h"
 #include "Jona/Log.h"
 
+#include "Jona/ImGui/ImGuiLayer.h"
+
 //---Entry Point-----------------
 #include "Jona/EntryPoint.h"
 //-------------------------------
