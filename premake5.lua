@@ -16,9 +16,12 @@ IncludeDir["GLFW"] = "Jona/vendor/GLFW/include"
 IncludeDir["Glad"] = "Jona/vendor/Glad/include"
 IncludeDir["Imgui"] = "Jona/vendor/imgui"
 
-include "Jona/vendor/GLFW"
-include "Jona/vendor/Glad"
-include "Jona/vendor/imgui"
+group "Dependencies"
+	include "Jona/vendor/GLFW"
+	include "Jona/vendor/Glad"
+	include "Jona/vendor/imgui"
+
+group ""
 
 project "Jona"
 	location "Jona"
@@ -68,7 +71,7 @@ project "Jona"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
