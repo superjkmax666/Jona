@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		JN_INFO("ExampleLayer::Update");
+		if (Jona::Input::IsKeyPressed(JN_KEY_TAB))
+			JN_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Jona::Event& event) override
 	{
-		JN_TRACE("{0}", event);
+		if (event.GetEventType() == Jona::EventType::KeyPressed)
+		{
+			Jona::KeyPressedEvent& e = (Jona::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == JN_KEY_TAB)
+				JN_TRACE("Tab key is pressed (event)!");
+			JN_TRACE("{0}", (char) e.GetKeyCode());
+		}
 	}
 };
 

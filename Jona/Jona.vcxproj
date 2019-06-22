@@ -159,9 +159,11 @@
     <ClInclude Include="src\Jona\Events\MouseEvent.h" />
     <ClInclude Include="src\Jona\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Jona\Input.h" />
+    <ClInclude Include="src\Jona\KeyCodes.h" />
     <ClInclude Include="src\Jona\Layer.h" />
     <ClInclude Include="src\Jona\LayerStack.h" />
     <ClInclude Include="src\Jona\Log.h" />
+    <ClInclude Include="src\Jona\MouseButtonCodes.h" />
     <ClInclude Include="src\Jona\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -195,4 +197,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project> 
+</Project>

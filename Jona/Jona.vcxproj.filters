@@ -71,6 +71,8 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\jnpch.h" />
+    <ClInclude Include="src\Jona\KeyCodes.h" />
+    <ClInclude Include="src\Jona\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jona\Application.cpp">
