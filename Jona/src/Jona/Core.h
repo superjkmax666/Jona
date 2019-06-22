@@ -10,6 +10,10 @@
 	#error Jona only supports Windows!
 #endif
 
+#ifdef JN_DEBUG
+	#define JN_ENABLE_ASSERTS
+#endif
+
 #ifdef JN_ENABLE_ASSERTS
 	#define JN_ASSERT(x, ...) { if(!(x)) { JN_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define JN_CORE_ASSERT(x, ...) { if(!(x)) { JN_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
