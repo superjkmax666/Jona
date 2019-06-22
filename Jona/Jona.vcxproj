@@ -158,11 +158,13 @@
     <ClInclude Include="src\Jona\Events\KeyEvent.h" />
     <ClInclude Include="src\Jona\Events\MouseEvent.h" />
     <ClInclude Include="src\Jona\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Jona\Input.h" />
     <ClInclude Include="src\Jona\Layer.h" />
     <ClInclude Include="src\Jona\LayerStack.h" />
     <ClInclude Include="src\Jona\Log.h" />
     <ClInclude Include="src\Jona\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\jnpch.h" />
   </ItemGroup>
@@ -173,6 +175,7 @@
     <ClCompile Include="src\Jona\LayerStack.cpp" />
     <ClCompile Include="src\Jona\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\jnpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -192,4 +195,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project>
+</Project> 
