@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Jona/vendor/GLFW/include"
 IncludeDir["Glad"] = "Jona/vendor/Glad/include"
 IncludeDir["Imgui"] = "Jona/vendor/imgui"
+IncludeDir["glm"] = "Jona/vendor/glm"
 
 group "Dependencies"
 	include "Jona/vendor/GLFW"
@@ -38,7 +39,9 @@ project "Jona"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -47,7 +50,8 @@ project "Jona"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.Imgui}"
+		"%{IncludeDir.Imgui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -107,7 +111,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Jona/vendor/spdlog/include",
-		"Jona/src"
+		"Jona/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
