@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef JN_PLATFORM_WINDOWS
+#if JN_DYNAMIC_LINK
 	#ifdef JN_BUILD_DLL
 		#define JONA_API __declspec(dllexport)
 	#else
 		#define JONA_API __declspec(dllimport)
 	#endif
+#else
+	#define JONA_API
+#endif
 #else
 	#error Jona only supports Windows!
 #endif

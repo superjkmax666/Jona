@@ -7,6 +7,8 @@
 #include "Jona/Events/Event.h"
 #include "Jona/Events/ApplicationEvent.h"
 
+#include "Jona/ImGui/ImGuiLayer.h"
+
 namespace Jona {
 
 	class JONA_API Application
@@ -29,6 +31,7 @@ namespace Jona {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
