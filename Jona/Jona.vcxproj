@@ -156,6 +156,7 @@
     <ClInclude Include="src\Jona\Log.h" />
     <ClInclude Include="src\Jona\MouseButtonCodes.h" />
     <ClInclude Include="src\Jona\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Jona\Renderer\Shader.h" />
     <ClInclude Include="src\Jona\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
@@ -533,6 +534,7 @@
     <ClCompile Include="src\Jona\Layer.cpp" />
     <ClCompile Include="src\Jona\LayerStack.cpp" />
     <ClCompile Include="src\Jona\Log.cpp" />
+    <ClCompile Include="src\Jona\Renderer\Shader.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
