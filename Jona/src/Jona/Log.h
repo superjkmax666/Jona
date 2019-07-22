@@ -25,11 +25,11 @@ namespace Jona {
 #define JN_CORE_INFO(...)		::Jona::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define JN_CORE_WARN(...)		::Jona::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define JN_CORE_ERROR(...)		::Jona::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define JN_CORE_FATAL(...)		::Jona::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define JN_CORE_CRITICAL(...)		::Jona::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
 #define JN_TRACE(...)			::Jona::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define JN_INFO(...)			::Jona::Log::GetClientLogger()->info(__VA_ARGS__)
 #define JN_WARN(...)			::Jona::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define JN_ERROR(...)			::Jona::Log::GetClientLogger()->error(__VA_ARGS__)
-#define JN_FATAL(...)			::Jona::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define JN_CRITICAL(...)			::Jona::Log::GetClientLogger()->critical(__VA_ARGS__)

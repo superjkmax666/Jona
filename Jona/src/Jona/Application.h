@@ -10,6 +10,7 @@
 #include "Jona/ImGui/ImGuiLayer.h"
 
 #include "Jona/Renderer/Shader.h"
+#include "Jona/Renderer/Buffer.h"
 
 namespace Jona {
 
@@ -17,7 +18,7 @@ namespace Jona {
 	{
 	public:
 		Application();
-		virtual ~Application();
+		virtual ~Application() = default;
 
 		void Run();
 
@@ -37,8 +38,10 @@ namespace Jona {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		unsigned int m_VertexArray;
 		std::unique_ptr<Shader> m_Shader;
+		std::unique_ptr<VertexBuffer> m_VertexBuffer;
+		std::unique_ptr<IndexBuffer> m_IndexBuffer;
 	private:
 		static Application* s_Instance;
 	};

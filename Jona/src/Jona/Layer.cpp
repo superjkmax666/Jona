@@ -8,8 +8,4 @@ namespace Jona {
 	{
 	}
 
-	Layer::~Layer()
-	{
-	}
-
 }
