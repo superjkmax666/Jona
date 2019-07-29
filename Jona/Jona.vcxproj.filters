@@ -1215,6 +1215,10 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Jona\Renderer\VertexArray.h">
+      <Filter>src\Jona\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jona\Application.cpp">
@@ -1259,5 +1263,9 @@
     <ClCompile Include="src\jnpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Jona\Renderer\VertexArray.cpp">
+      <Filter>src\Jona\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
   </ItemGroup>
 </Project>
