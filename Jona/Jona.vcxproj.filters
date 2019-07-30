@@ -1219,6 +1219,9 @@
       <Filter>src\Jona\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Jona\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Jona\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Jona\Application.cpp">
@@ -1267,5 +1270,8 @@
       <Filter>src\Jona\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Jona\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Jona\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
   </ItemGroup>
 </Project>
