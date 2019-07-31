@@ -13,6 +13,8 @@
 #include "Jona/Renderer/Buffer.h"
 #include "Jona/Renderer/VertexArray.h"
 
+#include "Jona/Renderer/OrthographicCamera.h"
+
 namespace Jona {
 
 	class JONA_API Application
@@ -44,6 +46,8 @@ namespace Jona {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
