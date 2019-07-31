@@ -10,3 +10,6 @@
 [submodule "Jona\\vendor\\glm"]
 	path = Jona\\vendor\\glm
 	url = https://github.com/g-truc/glm
+[submodule "Jona/vendor/glm"]
+	path = Jona/vendor/glm
+	url = https://github.com/g-truc/glc
