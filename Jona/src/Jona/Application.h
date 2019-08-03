@@ -7,17 +7,13 @@
 #include "Jona/Events/Event.h"
 #include "Jona/Events/ApplicationEvent.h"
 
+#include "Jona/Core/Timestep.h"
+
 #include "Jona/ImGui/ImGuiLayer.h"
-
-#include "Jona/Renderer/Shader.h"
-#include "Jona/Renderer/Buffer.h"
-#include "Jona/Renderer/VertexArray.h"
-
-#include "Jona/Renderer/OrthographicCamera.h"
 
 namespace Jona {
 
-	class JONA_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -35,19 +31,12 @@ namespace Jona {
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};
