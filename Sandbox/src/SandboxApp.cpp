@@ -2,11 +2,13 @@
 
 #include "imgui/imgui.h"
 
+#include <glm/gtc/matrix_transform.hpp>
+
 class ExampleLayer : public Jona::Layer
 {
 public:
 	ExampleLayer()
-		:Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		:Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f), m_SquarePosition(0.0f)
 	{
 		m_VertexArray.reset(Jona::VertexArray::Create());
 
@@ -33,10 +35,10 @@ public:
 		m_SquareVA.reset(Jona::VertexArray::Create());
 
 		float squareVertices[3 * 4] = {
-			-0.75f, -0.75f, 0.0f,
-			 0.75f, -0.75f, 0.0f,
-			 0.75f,  0.75f, 0.0f,
-			-0.75f,  0.75f, 0.0f
+			-0.5f, -0.5f, 0.0f,
+			 0.5f, -0.5f, 0.0f,
+			 0.5f,  0.5f, 0.0f,
+			-0.5f,  0.5f, 0.0f
 		};
 
 		std::shared_ptr<Jona::VertexBuffer> squareVB;
@@ -58,6 +60,7 @@ public:
 			layout(location = 1) in vec4 a_Color;
 
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 
 			out vec3 v_Position;
 			out vec4 v_Color;
@@ -66,7 +69,7 @@ public:
 			{
 				v_Position = a_Position;
 				v_Color = a_Color;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -93,13 +96,14 @@ public:
 			layout(location = 0) in vec3 a_Position;
 
 			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
 
 			out vec3 v_Position;
 
 			void main()
 			{
 				v_Position = a_Position;
-				gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 			}
 		)";
 
@@ -122,19 +126,19 @@ public:
 	void OnUpdate(Jona::Timestep ts) override
 	{
 		if (Jona::Input::IsKeyPressed(JN_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-		else if (Jona::Input::IsKeyPressed(JN_KEY_RIGHT))
 			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
+		else if (Jona::Input::IsKeyPressed(JN_KEY_RIGHT))
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 
 		if (Jona::Input::IsKeyPressed(JN_KEY_UP))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		else if (Jona::Input::IsKeyPressed(JN_KEY_DOWN))
 			m_CameraPosition.y += m_CameraMoveSpeed * ts;
+		else if (Jona::Input::IsKeyPressed(JN_KEY_DOWN))
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 
 		if (Jona::Input::IsKeyPressed(JN_KEY_A))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		else if (Jona::Input::IsKeyPressed(JN_KEY_D))
 			m_CameraRotation += m_CameraRotationSpeed * ts;
+		else if (Jona::Input::IsKeyPressed(JN_KEY_D))
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 		Jona::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Jona::RenderCommand::Clear();
@@ -144,8 +148,17 @@ public:
 
 		Jona::Renderer::BeginScene(m_Camera);
 
-		Jona::Renderer::Submit(m_BlueShader, m_SquareVA);
-		Jona::Renderer::Submit(m_Shader, m_VertexArray);
+		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
+
+		for (int y = 0; y < 20; y++) {
+			for (int x = 0; x < 20; x++) {
+				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
+				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
+				Jona::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+			}
+		}
+
+		//Jona::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Jona::Renderer::EndScene();
 
