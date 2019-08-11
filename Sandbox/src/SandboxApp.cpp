@@ -21,7 +21,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<Jona::VertexBuffer> vertexBuffer;
+		Jona::Ref<Jona::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Jona::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Jona::BufferLayout layout = {
 			{ Jona::ShaderDataType::Float3, "a_Position" },
@@ -31,7 +31,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Jona::IndexBuffer> indexBuffer;
+		Jona::Ref<Jona::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Jona::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -44,7 +44,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Jona::VertexBuffer> squareVB;
+		Jona::Ref<Jona::VertexBuffer> squareVB;
 		squareVB.reset(Jona::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ Jona::ShaderDataType::Float3, "a_Position" }
@@ -52,7 +52,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Jona::IndexBuffer> squareIB;
+		Jona::Ref<Jona::IndexBuffer> squareIB;
 		squareIB.reset(Jona::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -179,11 +179,11 @@ public:
 	{
 	}
 private:
-	std::shared_ptr<Jona::Shader> m_Shader;
-	std::shared_ptr<Jona::VertexArray> m_VertexArray;
+	Jona::Ref<Jona::Shader> m_Shader;
+	Jona::Ref<Jona::VertexArray> m_VertexArray;
 	
-	std::shared_ptr<Jona::Shader> m_FlatColorShader;
-	std::shared_ptr<Jona::VertexArray> m_SquareVA;
+	Jona::Ref<Jona::Shader> m_FlatColorShader;
+	Jona::Ref<Jona::VertexArray> m_SquareVA;
 
 	Jona::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
