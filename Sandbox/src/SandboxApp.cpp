@@ -159,6 +159,7 @@ public:
 		m_TextureShader.reset(Jona::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 	
 		m_Texture = Jona::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_ChernoLogoTexture = Jona::Texture2D::Create("assets/textures/ChernoLogo.png");
 
 		std::dynamic_pointer_cast<Jona::OpenGLShader>( m_TextureShader )->Bind();
 		std::dynamic_pointer_cast<Jona::OpenGLShader>( m_TextureShader )->UploadUniformInt("u_Texture", 0);
@@ -204,6 +205,8 @@ public:
 
 		m_Texture->Bind();
 		Jona::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_ChernoLogoTexture->Bind();
+		Jona::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		// Triangle
 		// Jona::Renderer::Submit(m_Shader, m_VertexArray);
@@ -230,7 +233,7 @@ private:
 	Jona::Ref<Jona::Shader> m_FlatColorShader, m_TextureShader;
 	Jona::Ref<Jona::VertexArray> m_SquareVA;
 
-	Jona::Ref<Jona::Texture2D> m_Texture;
+	Jona::Ref<Jona::Texture2D> m_Texture, m_ChernoLogoTexture;
 
 	Jona::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
