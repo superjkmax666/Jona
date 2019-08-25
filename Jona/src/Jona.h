@@ -20,6 +20,7 @@
 
 #include "Jona/Renderer/Buffer.h"
 #include "Jona/Renderer/Shader.h"
+#include "Jona/Renderer/Texture.h"
 #include "Jona/Renderer/VertexArray.h"
 
 #include "Jona/Renderer/OrthographicCamera.h"

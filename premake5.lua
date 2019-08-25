@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Jona/vendor/GLFW/include"
 IncludeDir["Glad"] = "Jona/vendor/Glad/include"
 IncludeDir["Imgui"] = "Jona/vendor/imgui"
 IncludeDir["glm"] = "Jona/vendor/glm"
+IncludeDir["stb_image"] = "Jona/vendor/stb_image"
 
 group "Dependencies"
 	include "Jona/vendor/GLFW"
@@ -41,6 +42,8 @@ project "Jona"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -57,7 +60,8 @@ project "Jona"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.Imgui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
